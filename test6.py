@@ -12,10 +12,10 @@ def goproAction(gopro, waitTime):
     print(gopro.http_command.set_shutter(shutter=api.Params.Toggle.ENABLE))
     time.sleep(waitTime)
     print(gopro.http_command.set_shutter(shutter=api.Params.Toggle.DISABLE))
-    list = gopro.http_command.get_media_list()
-    for value in list['files']:
-        lastMedia = value['n']
-    print(gopro.http_command.download_file(camera_file=lastMedia))
-    gopro.close()
+    # list = gopro.http_command.get_media_list()
+    # for value in list['files']:
+    #     lastMedia = value['n']
+    # print(gopro.http_command.download_file(camera_file=lastMedia))
+    # gopro.close()
 
 gopro1Action = multiprocessing.Process(target=goproAction(gopro, 6))
